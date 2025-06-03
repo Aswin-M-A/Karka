@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="radio" name="options" value="option1"> Option 1 <br>
+  <input type="radio" name="options" value="option2"> Option 2 <br>
+  <input type="radio" name="options" value="option3"> Option 3 <br>
+
+  <label for="">say something</label><br>
+  <input type="checkbox" name="cb"> choice 1 <br>
+    <input type="checkbox" name="cb"> choice 2 <br>
+    <input type="checkbox" name="cb"> choice 3 <br>
+  <button onclick="submitForm()">Submit</button>
+  <p id="result"></p>
+  <p id="result1"></p>
+
+  <script>
+    function submitForm() {
+      const selectedOption = document.querySelector('input[name="options"]:checked');
+      document.getElementById("result").innerHTML = "You selected: " + selectedOption.value;
+
+      
+    const box = document.querySelectorAll('input[name="cb"]:checked');
+    const selectedbox = Array.from(box).map(cb => cb.nextSibling.textContent).join(", ");
+    
+    document.getElementById("result1").innerHTML = "Your selected " +selectedbox
+    }
+
+  </script>
+</body>
+
+</html>
